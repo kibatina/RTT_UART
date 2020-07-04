@@ -103,7 +103,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_LPUART1_UART_Init();
+  //MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	rt_err_t rst;
 	rst = rt_thread_init(&led_thread,

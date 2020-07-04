@@ -68,7 +68,8 @@ void rt_hw_board_init()
 {
     /* System Clock Update */
     SystemCoreClockUpdate();
-    
+
+		MX_LPUART1_UART_Init();
     /* System Tick Configuration */
     _SysTick_Config(SystemCoreClock / RT_TICK_PER_SECOND);
 
