@@ -31,7 +31,7 @@
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef hlpuart1;
-extern void MX_LPUART1_UART_Init(void);
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -128,3 +128,5 @@ dkms.conf
 
 *.bak
 *.jscope
+.mxproject
+.mxproject
