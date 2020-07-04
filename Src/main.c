@@ -22,7 +22,7 @@
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
-
+//#include <stdio.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <rtthread.h>
@@ -64,12 +64,22 @@ static void led_thread_entry(void *parameter)
 {
 	while(1)
 	{
+		
 		HAL_GPIO_WritePin(USER_LED_PA5_GPIO_Port,USER_LED_PA5_Pin, GPIO_PIN_SET);
 		rt_thread_mdelay(500);
 		HAL_GPIO_WritePin(USER_LED_PA5_GPIO_Port,USER_LED_PA5_Pin, GPIO_PIN_RESET);
 		rt_thread_mdelay(500);
 	}
 }
+
+#if 0
+int fputc(int ch, FILE *f)
+{
+	HAL_UART_Transmit(&hlpuart1, (uint8_t *)&ch, 1, 1);
+	while(!__HAL_UART_GET_FLAG(&hlpuart1,UART_FLAG_TXE));
+	return ch;
+}
+#endif
 
 /* USER CODE END 0 */
 
@@ -121,12 +131,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-  }
   /* USER CODE END 3 */
 }
 
