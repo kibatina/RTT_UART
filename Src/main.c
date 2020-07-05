@@ -62,6 +62,8 @@ void SystemClock_Config(void);
 //编写线程入口函数
 static void led_thread_entry(void *parameter)
 {
+	char sprintf_buf[128];
+	float test_data = 1000.66666666f;
 	while(1)
 	{
 		
@@ -69,6 +71,11 @@ static void led_thread_entry(void *parameter)
 		rt_thread_mdelay(500);
 		HAL_GPIO_WritePin(USER_LED_PA5_GPIO_Port,USER_LED_PA5_Pin, GPIO_PIN_RESET);
 		rt_thread_mdelay(500);
+		snprintf(sprintf_buf, "%f\n", test_data);
+		rt_kprintf(sprintf_buf);
+		//rt_kprintf("%f\r\n",test_data);
+		//rt_kprintf("i am fine .\r\n");
+		//test_data += test_data;
 	}
 }
 
